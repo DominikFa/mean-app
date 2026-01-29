@@ -1,0 +1,41 @@
+.details-container {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+.detail-card {
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+.detail-image {
+  width: 100%;
+  max-height: 450px;
+  object-fit: cover;
+  transition: transform 0.5s;
+
+  &:hover {
+    transform: scale(1.02);
+  }
+}
+.detail-content {
+  .fa-eye {
+    color: #6c757d;
+  }
+
+  span {
+    font-size: 0.9rem;
+    color: #6c757d;
+    margin-left: 5px;
+  }
+}
+.post-text {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #ddd;
+  white-space: pre-wrap;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}

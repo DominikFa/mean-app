@@ -1,0 +1,46 @@
+
+:root {
+  --bg-color: #ffffff;
+  --text-color: #333333;
+  --card-bg: #f8f9fa;
+  --border-color: #dee2e6;
+}
+
+
+body.dark-mode {
+  --bg-color: #1a1a2e;
+  --text-color: #eaeaea;
+  --card-bg: #16213e;
+  --border-color: #0f3460;
+
+
+  .card {
+    background-color: var(--card-bg);
+    border-color: var(--border-color);
+    color: var(--text-color);
+  }
+
+  .form-control {
+    background-color: #16213e;
+    color: #eaeaea;
+    border-color: #0f3460;
+  }
+
+  .list-group-item {
+     background-color: #16213e;
+     color: #eaeaea;
+     border-color: #0f3460;
+  }
+
+
+  .bi-search {
+      color: #6c757d !important;
+  }
+}
+
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: background-color 0.3s ease, color 0.3s ease; /* Płynne przejście */
+}

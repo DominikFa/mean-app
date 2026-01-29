@@ -1,0 +1,92 @@
+// Styl podstawowy (Light Mode)
+.add-post-card {
+  background-color: #ffffff;
+  transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+
+  .form-control {
+    background-color: #f8f9fa;
+    border: 1px solid #ced4da;
+    color: #212529;
+
+    &:focus {
+      background-color: #ffffff;
+      border-color: #86b7fe;
+      box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+    }
+  }
+
+  label {
+    color: #6c757d;
+  }
+}
+
+// Styl dla trybu ciemnego (Dark Mode)
+// Używamy :host-context, aby sprawdzić, czy rodzic (body) ma klasę .dark-theme
+:host-context(.dark-theme) {
+  .add-post-card {
+    background-color: #2b3035; // Ciemne tło karty
+    color: #e0e0e0; // Jasny tekst
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,0.3) !important; // Mocniejszy cień w nocy
+
+    .card-title {
+      color: #6ea8fe !important; // Jaśniejszy niebieski dla tytułu w trybie ciemnym
+    }
+
+    .form-control {
+      background-color: #212529; // Bardzo ciemne tło inputów
+      border-color: #495057;
+      color: #e0e0e0;
+
+      &:focus {
+        background-color: #1a1d20;
+        border-color: #6ea8fe;
+        color: #ffffff;
+        box-shadow: 0 0 0 0.25rem rgba(110, 168, 254, 0.25);
+      }
+
+      &::placeholder {
+        color: #adb5bd;
+      }
+    }
+
+    label {
+      color: #adb5bd; // Jasny szary dla etykiet
+    }
+
+    // Obsługa autofill przeglądarki w trybie ciemnym (żeby nie robił się biały)
+    input:-webkit-autofill,
+    input:-webkit-autofill:hover,
+    input:-webkit-autofill:focus,
+    textarea:-webkit-autofill,
+    textarea:-webkit-autofill:hover,
+    textarea:-webkit-autofill:focus {
+      -webkit-text-fill-color: #e0e0e0;
+      -webkit-box-shadow: 0 0 0px 1000px #212529 inset;
+      transition: background-color 5000s ease-in-out 0s;
+    }
+  }
+}
+
+.btn-submit {
+  display: block;
+  width: 100%;
+  padding: 0.85rem;
+  margin-top: 1.5rem;
+  background: linear-gradient(135deg, #007bff 0%, #0056b3 100%);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 91, 187, 0.3);
+  }
+
+  &:active {
+    transform: translateY(0);
+  }
+}

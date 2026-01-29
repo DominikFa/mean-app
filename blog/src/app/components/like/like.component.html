@@ -1,0 +1,10 @@
+<div class="like-container bg-white rounded-circle p-2 d-flex align-items-center justify-content-center"
+     [class.disabled]="isOwnPost"
+     [title]="isOwnPost ? 'Nie możesz polubić własnego posta' : ''"
+     (click)="toggleLike($event)">
+  <i class="fa"
+     [ngClass]="{'fa-thumbs-up': isLiked, 'fa-thumbs-o-up': !isLiked}"
+     style="font-size: 1.2rem;">
+  </i>
+  <span class="ms-1 small fw-bold">{{ likesCount }}</span>
+</div>

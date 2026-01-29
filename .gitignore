@@ -1,0 +1,20 @@
+# --- Root/General ---
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# --- API (Node.js) ---
+api/node_modules/
+api/dist/
+api/*.tsbuildinfo
+api/npm-debug.log*
+api/.env
+
+# --- Blog (Angular) ---
+blog/node_modules/
+blog/.angular/
+blog/dist/
+blog/out-tsc/
+blog/.cache/
+blog/npm-debug.log*

@@ -1,0 +1,14 @@
+.rating {
+  display: flex;
+  align-items: center;
+}
+
+.stars {
+  font-size: 1.1rem;
+
+  i {
+    cursor: pointer;
+    color: orange;
+    margin-right: 2px;
+  }
+}

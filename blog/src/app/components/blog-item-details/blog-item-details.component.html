@@ -1,0 +1,65 @@
+<div class="details-container container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-lg-8">
+
+      <div class="card detail-card border-0 shadow-sm">
+        <img [src]="image" class="card-img-top detail-image" alt="Post image">
+        <div class="card-body p-4">
+          <div class="detail-content">
+            <div class="d-flex align-items-center text-muted mb-3">
+              <i class="fa fa-eye me-2" aria-hidden="true" style="font-size: 1.2rem;"></i>
+              <span class="fw-bold">{{ views }}</span>
+            </div>
+
+            <p class="post-text">
+              {{ text }}
+            </p>
+          </div>
+
+          <div *ngIf="isAuthor" class="d-flex justify-content-end gap-2 author-actions">
+            <button class="btn btn-outline-primary" (click)="enableEdit()">
+              <i class="bi bi-pencil-square me-2"></i>Edytuj
+            </button>
+            <button class="btn btn-outline-danger" (click)="deletePost()">
+              <i class="bi bi-trash-fill me-2"></i>Usuń
+            </button>
+        </div>
+      </div>
+
+
+      <div class="card edit-card border-0 shadow-sm" *ngIf="editMode">
+        <div class="card-body p-4">
+          <h3 class="card-title mb-4 fw-bold text-primary">Edytuj wpis</h3>
+
+          <div class="form-floating mb-3">
+            <input type="text" class="form-control" id="editTitle" [(ngModel)]="title" placeholder="Tytuł">
+            <label for="editTitle">Tytuł posta</label>
+          </div>
+
+          <div class="form-floating mb-3">
+            <input type="text" class="form-control" id="editImage" [(ngModel)]="image" placeholder="URL Obrazka">
+            <label for="editImage">Link do obrazka (URL)</label>
+          </div>
+
+          <div class="form-floating mb-4">
+            <textarea class="form-control" id="editText" [(ngModel)]="text" placeholder="Treść" style="height: 200px"></textarea>
+            <label for="editText">Treść wpisu</label>
+          </div>
+
+          <div class="d-flex justify-content-end gap-2">
+            <button class="btn btn-secondary" (click)="cancelEdit()">
+              Anuluj
+            </button>
+            <button class="btn btn-success px-4" (click)="saveEdit()">
+              <i class="bi bi-check-lg me-2"></i>Zapisz zmiany
+            </button>
+          </div>
+        </div>
+      </div>
+        <div class="px-4 pb-4">
+          <comments-section [postId]="id"></comments-section>
+        </div>
+    </div>
+  </div>
+</div>
+</div>

@@ -1,0 +1,19 @@
+<div class="container mt-4">
+  <h2>Ulubione posty</h2>
+  <div class="row">
+    @for (item of favoriteItems; track item._id) {
+    <div class="col-md-4 mb-4">
+      <blog-item
+        [image]="item.image"
+        [text]="item.text"
+        [title]="item.title"
+        [_id]="item._id">
+      </blog-item>
+    </div>
+    } @empty {
+    <div class="col-12 text-center py-5">
+      <p class="text-secondary">Nie masz jeszcze ulubionych postów.</p>
+    </div>
+    }
+  </div>
+</div>

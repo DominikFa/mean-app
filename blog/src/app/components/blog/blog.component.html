@@ -1,0 +1,24 @@
+<div class="container mt-4">
+  <div class="row">
+    @for (item of (items$ | filter:filterText | paginate:currentPage:itemsPerPage); track item._id) {
+    <div class="col-md-4 mb-4">
+      <blog-item [image]="item.image" [text]="item.text" [title]="item.title" [_id]="item._id" [authorId]="item.userId">></blog-item>
+    </div>
+    } @empty {
+    <div class="col-12 text-center py-5">
+      <div class="no-results shadow-sm p-4 bg-white rounded">
+        <i class="bi bi-search" style="font-size: 3rem; color: #dee2e6;"></i>
+        <h4 class="mt-3 text-muted">Nie znaleziono postów</h4>
+        <p class="text-secondary">Spróbuj wpisać inne hasło wyszukiwania.</p>
+      </div>
+    </div>
+    }
+  </div>
+
+  <app-pagination
+    [totalItems]="(items$ | filter:filterText)?.length || 0"
+    [itemsPerPage]="itemsPerPage"
+    [currentPage]="currentPage"
+    (pageChange)="onPageChange($event)">
+  </app-pagination>
+</div>

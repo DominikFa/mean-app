@@ -1,0 +1,4 @@
+<button class="btn btn-outline-secondary" (click)="themeService.toggleTheme()">
+  <i class="bi" [ngClass]="(themeService.darkMode$ | async) ? 'bi-sun' : 'bi-moon'"></i>
+  {{ (themeService.darkMode$ | async) ? 'Jasny' : 'Ciemny' }}
+</button>

@@ -1,0 +1,16 @@
+<div class="rating mt-2">
+  <div class="stars">
+    <i *ngFor="let star of stars" class="fa"
+       [ngClass]="{
+         'fa-star': star <= (hoverRating || currentRating),
+         'fa-star-o': star > (hoverRating || currentRating)
+       }"
+       (mouseenter)="onStarHover(star)"
+       (mouseleave)="hoverRating = 0"
+       (click)="onStarClick(star)">
+    </i>
+  </div>
+  <small class="text-muted ms-2">
+    ({{ averageRating | number:'1.1-1' }} / {{ votesCount }} gł.)
+  </small>
+</div>

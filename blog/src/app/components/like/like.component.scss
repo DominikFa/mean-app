@@ -1,0 +1,26 @@
+.like-container {
+  width: 45px;
+  height: 45px;
+  cursor: pointer;
+  color: blue;
+  transition: transform 0.2s;
+
+  /* Added positioning to align to the right side (bottom-right) */
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+}
+
+.like-container:active {
+  transform: scale(0.9);
+}
+
+.like-container.disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+  color: #6c757d;
+}
+
+.like-container.disabled:active {
+  transform: none;
+}

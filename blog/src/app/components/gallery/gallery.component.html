@@ -1,0 +1,20 @@
+<h3 class="mb-3">Galeria zdjęć</h3>
+<div class="row">
+  @for (img of images; track $index) {
+  <div class="col-md-3 col-sm-6 mb-3">
+    <img [src]="img"
+         class="img-fluid img-thumbnail gallery-item"
+         (click)="openLightbox(img)"
+         style="cursor: pointer; object-fit: cover; height: 150px; width: 100%;">
+  </div>
+  }
+</div>
+
+@if (selectedImage) {
+<div class="lightbox-overlay" (click)="closeLightbox()">
+  <div class="lightbox-content">
+    <img [src]="selectedImage" alt="Powiększenie">
+    <button class="btn btn-close btn-close-white position-absolute top-0 end-0 m-3" (click)="closeLightbox()"></button>
+  </div>
+</div>
+}
