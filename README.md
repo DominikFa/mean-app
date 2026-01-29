@@ -35,3 +35,5 @@ Uruchom: `npx ng serve`
 
 
 **Dominik Faliszek**: Projekt zaliczeniowy - Technologie aplikacji webowych.
+
+**github link:** *https://github.com/DominikFa/mean-app*
