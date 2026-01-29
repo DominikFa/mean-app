@@ -1,25 +1,37 @@
-#Projekt z "Technologie aplikacji webowych"
+# Projekt: Blog MEAN
 
-##Uruchamianie
+## Uruchamianie
 
-w folderze api/
-    npm install
-    npm run watch
+### API (serwer)
 
-w folderze blog/
-    npm install
-    ng serve/npx ng serve
+Przejdź do folderu: `cd api`
 
-Edycja i usuwanie postów
+Zainstaluj biblioteki: `npm install`
 
-System polubień (like/unlike)
+Uruchom: `npm run watch`
 
-System komentarzy
+### Blog (klient)
 
-licznik wyświetleń
+Przejdź do folderu: `cd blog`
 
-obsługa autoryzacji:
-    auth/refresh token
-    rejestracja i logowanie
-    zabezpieczenie endpointow
-    blacklistowanie tokenow przy wylogowaniu
+Zainstaluj biblioteki: `npm install`
+
+Uruchom: `npx ng serve`
+
+---
+
+## Funkcje
+
+* Dodawanie, edycja i usuwanie postów
+* Licznik wyświetleń
+* System polubień 
+* System Komentarzy
+* Rejestracja i Logowanie 
+* Ochrona dostępu (JWT) 
+* Odświeżanie tokenów i blokowanie ich po wylogowaniu.
+* Funkcjonalności zrealizowane w ramach ćwiczeń laboratoryjnych
+
+---
+
+
+**Dominik Faliszek**: Projekt zaliczeniowy - Technologie aplikacji webowych.
